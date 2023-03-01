@@ -6,12 +6,20 @@ on:
 jobs:
   container-job:
     runs-on: ubuntu-22.04
-    container:
-      image: node:10.16-jessie
+    services:
+      mysql:
+        image: mysql:5.7
+        env:
+          MYSQL_ROOT_PASSWORD: root_password
+        ports:
+          - 3306:3306
+        # needed because the mysql container does not provide a healthcheck
+        options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=10s --health-retries=10
+
     steps:
       - run: |
           apt-get update
-          apt-get install -y --force-yes p7zip-full locales
+          apt-get install -y --force-yes p7zip-full 
           echo $LANG
           export LANG="zh_CN.UTF-8"
           wget https://github.com/banned-historical-archives/banned-historical-archives10/raw/master/7z/1946年05月.7z
