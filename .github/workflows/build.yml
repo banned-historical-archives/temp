@@ -18,8 +18,8 @@ jobs:
 
     steps:
       - run: |
-          apt-get update
-          apt-get install -y --force-yes p7zip-full 
+          sudo apt-get update
+          sudo apt-get install -y --force-yes p7zip-full 
           echo $LANG
           export LANG="zh_CN.UTF-8"
           wget https://github.com/banned-historical-archives/banned-historical-archives10/raw/master/7z/1946年05月.7z
