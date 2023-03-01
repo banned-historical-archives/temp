@@ -6,8 +6,6 @@ on:
 jobs:
   container-job:
     runs-on: ubuntu-22.04
-    container:
-      image: node:10.16-jessie
     steps:
       - run: |
           apt-get update
