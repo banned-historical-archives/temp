@@ -6,6 +6,8 @@ on:
 jobs:
   container-job:
     runs-on: ubuntu-22.04
+    container:
+      image: node:18.14.2-alpine3.17
     steps:
       - run: |
           sudo apt-get update
