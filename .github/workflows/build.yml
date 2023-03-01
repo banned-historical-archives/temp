@@ -20,7 +20,7 @@ jobs:
       - run: |
           sudo apt-get update
           sudo apt-get install -y --force-yes p7zip-full language-pack-zh-han*
-          mysql --host mysql -e 'CREATE DATABASE banned_history CHARACTER SET utf8 COLLATE utf8_general_ci;' -uroot -proot_password
+          mysql -e 'CREATE DATABASE banned_history CHARACTER SET utf8 COLLATE utf8_general_ci;' -uroot -proot_password
           echo $LANG
           export LANG="zh_CN.UTF-8"
           wget https://github.com/banned-historical-archives/banned-historical-archives10/raw/master/7z/1946年05月.7z
