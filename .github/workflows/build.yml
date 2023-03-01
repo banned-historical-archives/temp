@@ -14,7 +14,7 @@ jobs:
           apt-get install -y --force-yes p7zip-full locales
           echo $LANG
           export LANG="zh_CN.UTF-8"
-          wget https://github.com/banned-historical-archives/banned-historical-archives10/raw/master/7z/1946%E5%B9%B405%E6%9C%88.7z
+          wget https://github.com/banned-historical-archives/banned-historical-archives10/raw/master/7z/1946年05月.7z
           ls
           7z x ./1946年05月.7z
           ls
